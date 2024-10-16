@@ -3,14 +3,21 @@ from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 import sounddevice as sd
 import numpy as np
 import language_tool_python
+from gtts import gTTS
+from playsound import playsound
+import google.generativeai as genai
+import textwrap
+import re
+from jiwer import wer
+from dotenv import load_dotenv
+import os
 
-#Spanish Transformers
 modelo_wav2vec2 = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-large-xlsr-53-spanish")
 procesador_wav2vec2 = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-large-xlsr-53-spanish")
 
 tool = language_tool_python.LanguageTool('es')
 
-def transcribir_audio_microfono():
+def transcribir_audio_microfono(transcripcion_real):
     try:
         fs = 16000
         duracion = 5
@@ -34,8 +41,39 @@ def transcribir_audio_microfono():
         transcripcion_corregida = tool.correct(transcripcion)
         print("\nCorregida: " + transcripcion_corregida)
 
-        return transcripcion_corregida
+        error_wer = wer(transcripcion_real, transcripcion)
+        print(f"Word Error Rate (WER): {error_wer}")
+
+        return transcripcion_corregida, error_wer
     
     except Exception as e:
         print(f"Se produjo un error al transcribir el audio desde el micrófono: {e}")
         return None
+
+load_dotenv()
+genai_api_key = os.getenv("GEMINI_APIKEY")
+
+genai.configure(api_key = genai_api_key)
+model = genai.GenerativeModel('gemini-pro')
+
+transcripcion_real = "Texto de Ejemplo"
+
+texto_transcrito, error_wer = transcribir_audio_microfono(transcripcion_real)
+
+PROMPT = texto_transcrito
+response1 = model.generate_content(PROMPT)
+max_chars = 500
+texto1 = textwrap.shorten(response1.text, max_chars)
+
+print("Con *: " + texto1)
+
+texto_limpio = re.sub(r"\*", "", texto1)
+texto_limpio = texto_limpio.strip()
+
+print("\nSin *: " + texto_limpio)
+
+tts = gTTS(text=texto_limpio, lang="es")
+filename = "audio_respuesta.mp3"
+tts.save(filename)
+
+playsound(filename)
