@@ -1,12 +1,25 @@
-# Ivy-AI
-Ivy AI is a personal project dedicated to creating an intelligent assistant. This virtual assistant is designed to offer multiple functionalities. With the goal of fostering collaboration, this open-source project invites the community to propose new ideas to enhance its experience.
+# Ivy AI
+## About Ivy AI 🤖
+Ivy AI is a project I've wanted to bring to life for a long time. It’s designed as a personal assistant with various functionalities, but beyond that, it's a platform where I can practice and improve my skills as a developer. 💻
 
-# 🛠️ Working On
-- Text-To-Speech With Transformers (English and Spanish)
-- Speech-To-Text With Transformers (English and Spanish)
+This project serves as a sandbox to test different knowledge areas and tackle new challenges. I’m using it to experiment with concepts like AI, software design, and optimization, while also taking advantage of version control tools like Git. Working with branches, handling multiple deployments, and collaborating are all part of the learning process.
 
-# 💡 Propose Ideas
+Ivy AI is a space for growth and experimentation, where I get to push my boundaries as a developer.
+
+## 🛠️ Working On
+- Text-To-Speech With Transformers
+  - English
+  - Spanish
+    
+- Speech-To-Text With Transformers
+  - English
+  - Spanish
+
+## 📚 Documentation
+You can find the full documentation here (not available at the moment).
+
+## 💡 Propose Ideas
 We want Ivy AI to be as helpful and versatile as possible, and your suggestions can make that happen! If you have an idea or feature you'd like to see implemented, feel free to propose it.
 
-# 📄 License
+## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Johnson1255/Ivy-AI/blob/main/LICENSE) file for details.
