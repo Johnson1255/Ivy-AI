@@ -8,7 +8,6 @@ from playsound import playsound
 import google.generativeai as genai
 import textwrap
 import re
-from jiwer import wer
 from dotenv import load_dotenv
 import os
 
@@ -17,7 +16,7 @@ procesador_wav2vec2 = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-large
 
 tool = language_tool_python.LanguageTool('es')
 
-def transcribir_audio_microfono(transcripcion_real):
+def transcribir_audio_microfono():
     try:
         fs = 16000
         duracion = 5
@@ -41,10 +40,7 @@ def transcribir_audio_microfono(transcripcion_real):
         transcripcion_corregida = tool.correct(transcripcion)
         print("\nCorregida: " + transcripcion_corregida)
 
-        error_wer = wer(transcripcion_real, transcripcion)
-        print(f"Word Error Rate (WER): {error_wer}")
-
-        return transcripcion_corregida, error_wer
+        return transcripcion_corregida
     
     except Exception as e:
         print(f"Se produjo un error al transcribir el audio desde el micrófono: {e}")
@@ -56,9 +52,7 @@ genai_api_key = os.getenv("GEMINI_APIKEY")
 genai.configure(api_key = genai_api_key)
 model = genai.GenerativeModel('gemini-pro')
 
-transcripcion_real = "Texto de Ejemplo"
-
-texto_transcrito, error_wer = transcribir_audio_microfono(transcripcion_real)
+texto_transcrito = transcribir_audio_microfono()
 
 PROMPT = texto_transcrito
 response1 = model.generate_content(PROMPT)
