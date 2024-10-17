@@ -6,14 +6,17 @@ This project serves as a sandbox to test different knowledge areas and tackle ne
 
 Ivy AI is a space for growth and experimentation, where I get to push my boundaries as a developer.
 
+## ☕ Support Ivy AI
+If you're excited about this project, consider contributing with your skills, ideas, or by testing new features. Every contribution helps in developing this AI assistant! 😊
+
 ## 🛠️ Working On
 - Text-To-Speech With Transformers
-  - English
-  - Spanish
+  - English 
+  - Spanish ✔️
     
 - Speech-To-Text With Transformers
   - English
-  - Spanish
+  - Spanish ✔️
 
 ## 📚 Documentation
 You can find the full documentation here (not available at the moment).
