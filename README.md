@@ -9,14 +9,29 @@ Ivy AI is a space for growth and experimentation, where I get to push my boundar
 ## ☕ Support Ivy AI
 If you're excited about this project, consider contributing with your skills, ideas, or by testing new features. Every contribution helps in developing this AI assistant! 😊
 
+Also, If you'd like to support this personal project, Ivy AI, you can help by making a donation!
+
+[![](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=DHJNUBW42ZPY2)
+
 ## 🛠️ Working On
-- Text-To-Speech With Transformers
+- **Text-To-Speech With Transformers**
   - English 
   - Spanish ✔️
+
+The file is named `speech_to_text_ai_response.py`
     
-- Speech-To-Text With Transformers
+- **Speech-To-Text With Transformers**
   - English
   - Spanish ✔️
+
+The file is named `speech_to_text_ai_response.py`
+
+- **Random Response System with Personality**
+  - Training Ivy AI
+  - Response Selection
+  - Personalities
+ 
+The file is named `ivy_train.py`
 
 ## 📚 Documentation
 You can find the full documentation here (not available at the moment).
