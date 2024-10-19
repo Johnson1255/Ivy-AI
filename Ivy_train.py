@@ -1,5 +1,7 @@
 import csv
 import random
+from gtts import gTTS
+from playsound import playsound
 
 def load_responses(file_path):
     responses = {}
@@ -26,4 +28,11 @@ def get_response(question, responses, personality=None):
 responses = load_responses('ivy_responses.csv')
 question = "¿Quién eres?"
 personality = "Friendly"
-print(get_response(question, responses, personality))
+#print(get_response(question, responses, personality))
+
+tts = gTTS(text=get_response(question, responses, personality), lang="es")
+filename = "answer.mp3"
+tts.save(filename)
+
+# Play the generated audio
+playsound(filename)
