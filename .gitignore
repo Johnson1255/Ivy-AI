@@ -21,6 +21,9 @@ Thumbs.db
 # Generated audio files
 *.mp3
 
+# Data files
+*.csv
+
 # Model and cache files
 *.pt
 .cache/
