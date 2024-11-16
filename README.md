@@ -9,9 +9,11 @@ Ivy AI is a space for growth and experimentation, where I get to push my boundar
 ## ☕ Support Ivy AI
 If you're excited about this project, consider contributing with your skills, ideas, or by testing new features. Every contribution helps in developing this AI assistant! 😊
 
+<!--
 Also, If you'd like to support this personal project, Ivy AI, you can help by making a donation!
 
 [![](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=DHJNUBW42ZPY2)
+-->
 
 ## 🛠️ Working On
 - **Text-To-Speech With Transformers**
